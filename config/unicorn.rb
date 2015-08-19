@@ -1,6 +1,6 @@
 root_path = "/home/deploy/android_api_web/current"
 
-worker_processes 4
+worker_processes 1
 
 working_directory root_path # available in 0.94.0+
 listen "/tmp/unicorn.android_api_web.sock", :backlog => 64

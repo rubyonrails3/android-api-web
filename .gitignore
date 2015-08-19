@@ -15,3 +15,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+
+# VIM temporary files
+*.swp
+*.swo
+.DS_Store
