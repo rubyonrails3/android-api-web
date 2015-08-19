@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= link_to @location.url, @location.url, target: :_blank %>
+</p>
+
+<p>
+  <strong>Remote:</strong>
+  <%= @location.remote_id %>
+</p>
+
+<p>
+  <strong>Device:</strong>
+  <%= @location.device_id %>
+</p>
+
+<%= link_to 'Back', locations_path %>
