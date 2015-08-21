@@ -69,6 +69,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:url, :remote_id, :device_id)
+      params.require(:location).permit(:url, :remote_id, :device_id, :remote_created_at)
     end
 end
