@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'locations#index'
   resources :locations
+  resources :devices, only: [:create, :index]
+  match "devices/:device_id", controller: 'devices', action: :update, as: :device, via: [:put, :patch]
+  delete "devices/:device_id", controller: 'devices', action: :destroy
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

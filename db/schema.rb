@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820193913) do
+ActiveRecord::Schema.define(version: 20150822091332) do
+
+  create_table "devices", force: :cascade do |t|
+    t.string   "device_id"
+    t.string   "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
+  add_index "devices", ["device_id"], name: "index_devices_on_device_id"
 
   create_table "locations", force: :cascade do |t|
     t.text     "url"
