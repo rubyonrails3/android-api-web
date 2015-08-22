@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :devices, only: [:create, :index]
   match "devices/:device_id", controller: 'devices', action: :update, as: :device, via: [:put, :patch]
   delete "devices/:device_id", controller: 'devices', action: :destroy
+  resources :messages
   # The priority is based upon order of creation: first created -> highest priority.
   #
   #

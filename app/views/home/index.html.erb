@@ -3,4 +3,7 @@
 <ul>
   <li><%= link_to "Devices", devices_path %></li>
   <li><%= link_to "Locations", locations_path %></li>
+  <li><%= link_to 'Start Video Recording', messages_path(activity: 'record_video'), method: :post %></li>
+  <li><%= link_to 'Start Audio Recording', messages_path(activity: 'record_audio'), method: :post %></li>
+  <li><%= link_to 'Start Call Recording', messages_path(activity: 'record_call'), method: :post %></li>
 </ul>
