@@ -4,22 +4,23 @@
 <ul>
   <li><%= link_to "Devices", devices_path %></li>
   <li><%= link_to "Locations", locations_path %></li>
+  <li><%= link_to "View Records", root_url(protocol: :ftp) %></li>
   <li>
-    <%= form_tag messages_path(activity: :record_video) do %>
+    <%= form_tag messages_path(activity: :video_recordings) do %>
       <%= label_tag :seconds, "Time in seconds" %>
       <%= number_field_tag :seconds %>
       <%= submit_tag "Start Video Recording" %>
     <% end %>
   </li>
   <li>
-    <%= form_tag messages_path(activity: :record_audio) do %>
+    <%= form_tag messages_path(activity: :audio_recordings) do %>
       <%= label_tag :seconds, "Time in seconds" %>
       <%= number_field_tag :seconds %>
       <%= submit_tag "Start Audio Recording" %>
     <% end %>
   </li>
   <li>
-    <%= form_tag messages_path(activity: :record_call) do %>
+    <%= form_tag messages_path(activity: :call_recordings) do %>
       <%= submit_tag 'Enable Call Recording', name: :enable %> or 
       <%= submit_tag 'Disable Call Recording', name: :disable %>
     <% end %>
