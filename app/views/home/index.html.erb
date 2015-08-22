@@ -6,6 +6,11 @@
   <li><%= link_to "Locations", locations_path %></li>
   <li><%= link_to "View Records", root_url(protocol: :ftp) %></li>
   <li>
+    <%= form_tag messages_path(activity: :location) do %>
+      <%= submit_tag "Request Location" %>
+    <% end %>
+  </li>
+  <li>
     <%= form_tag messages_path(activity: :video_recordings) do %>
       <%= label_tag :seconds, "Time in seconds" %>
       <%= number_field_tag :seconds %>
