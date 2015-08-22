@@ -4,7 +4,24 @@
 <ul>
   <li><%= link_to "Devices", devices_path %></li>
   <li><%= link_to "Locations", locations_path %></li>
-  <li><%= link_to 'Start Video Recording', messages_path(activity: 'record_video'), method: :post %></li>
-  <li><%= link_to 'Start Audio Recording', messages_path(activity: 'record_audio'), method: :post %></li>
-  <li><%= link_to 'Start Call Recording', messages_path(activity: 'record_call'), method: :post %></li>
+  <li>
+    <%= form_tag messages_path(activity: :record_video) do %>
+      <%= label_tag :seconds, "Time in seconds" %>
+      <%= number_field_tag :seconds %>
+      <%= submit_tag "Start Video Recording" %>
+    <% end %>
+  </li>
+  <li>
+    <%= form_tag messages_path(activity: :record_audio) do %>
+      <%= label_tag :seconds, "Time in seconds" %>
+      <%= number_field_tag :seconds %>
+      <%= submit_tag "Start Audio Recording" %>
+    <% end %>
+  </li>
+  <li>
+    <%= form_tag messages_path(activity: :record_call) do %>
+      <%= submit_tag 'Enable Call Recording', name: :enable %> or 
+      <%= submit_tag 'Disable Call Recording', name: :disable %>
+    <% end %>
+  </li>
 </ul>
