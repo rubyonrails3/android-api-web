@@ -6,7 +6,8 @@ class DevicesController < ApplicationController
   end
 
   def create
-    device = Device.create device_params
+    device_id = device_params.delete(:device_id)
+    device = Device.create_with(device_params).find_or_create_by device_id: device_id
     render json: device.as_json(only: [:id, :device_id, :token, :name])
   end
 
