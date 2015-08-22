@@ -2,8 +2,7 @@ class MessagesController < ApplicationController
 
   def create
     registration_ids = Device.pluck(:token)
-    p message_params
-    if false && registration_ids.any?
+    if registration_ids.any?
       req = HTTPPost.new(uri: 'https://gcm-http.googleapis.com/gcm/send', body: { data: message_params, registration_ids: registration_ids }.to_json)
       req.start
     end
